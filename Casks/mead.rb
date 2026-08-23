@@ -1,6 +1,6 @@
 cask "mead" do
-  version "0.4.0"
-  sha256 "766a68d36dc74505a3780e4fbe01d0e13d68cddc19de261bb9ebe07e92653b2f"
+  version "0.5.0"
+  sha256 "c2af8fad6e31d51281265f58b3595bf0776254a7efa4dd6c90dd43308573759b"
 
   url "https://github.com/DaKiLloTh/homebrew-mead/releases/download/v#{version}/mead-v#{version}-macos-arm64.dmg"
   name "mead"
