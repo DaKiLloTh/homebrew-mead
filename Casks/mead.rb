@@ -1,0 +1,40 @@
+cask "mead" do
+  version "0.4.0"
+  sha256 "766a68d36dc74505a3780e4fbe01d0e13d68cddc19de261bb9ebe07e92653b2f"
+
+  url "https://github.com/DaKiLloTh/homebrew-mead/releases/download/v#{version}/mead-v#{version}-macos-arm64.dmg"
+  name "mead"
+  desc "Native Homebrew GUI for macOS"
+  homepage "https://github.com/DaKiLloTh/mead"
+
+  depends_on arch: :arm64
+  depends_on macos: ">= :sonoma"
+
+  app "mead.app"
+
+  # mead's release builds are unsigned (no paid Apple Developer ID), so a
+  # plain download would get Gatekeeper-quarantined and refuse to launch on
+  # first open. Homebrew's own --no-quarantine flag for the official
+  # homebrew-cask repo is being retired (see Homebrew/brew#20755) as part of
+  # tightening what that repo accepts, but a third-party tap's own cask
+  # definition isn't bound by that policy -- stripping the quarantine
+  # attribute ourselves in postflight, on our own tap, achieves the same
+  # practical outcome without depending on a flag Homebrew is removing.
+  postflight do
+    system_command "/usr/bin/xattr",
+                    args: ["-dr", "com.apple.quarantine", "#{appdir}/mead.app"],
+                    sudo: false
+  end
+
+  zap trash: [
+    "~/Library/Application Support/mead",
+    "~/Library/Saved Application State/com.wails.mead.savedState",
+  ]
+
+  caveats do
+    <<~EOS
+      mead is pre-alpha software: expect bugs, and expect breaking changes
+      between releases until it reaches a stable 1.0.
+    EOS
+  end
+end
