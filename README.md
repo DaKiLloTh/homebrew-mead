@@ -1,6 +1,6 @@
 # homebrew-mead
 
-Homebrew tap for [mead](https://github.com/DaKiLloTh/mead), a native Homebrew GUI for macOS.
+Homebrew tap for [mead](https://github.com/DaKiLloTh/mead), a native Homebrew GUI for macOS. See [getmead.app](https://getmead.app).
 
 ## Install
 
@@ -21,4 +21,4 @@ would otherwise need.
 mead is pre-alpha software. Expect bugs and breaking changes between
 releases until it reaches 1.0.
 
-## macOS Apple Silicon (arm64) only.
+## macOS Apple Silicon (arm64) or Intel (amd64).
