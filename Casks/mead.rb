@@ -1,9 +1,9 @@
 cask "mead" do
   arch arm: "arm64", intel: "amd64"
 
-  version "0.6.0"
-  sha256 arm:   "1a7ea10b7056ffa84919c02e92a43aa63f241ce3d546e4c274cdf93003576504",
-         intel: "0000000000000000000000000000000000000000000000000000000000000000"
+  version "0.7.0"
+  sha256 arm:   "b6438391bec62a40e68b318932cc42fdfb02b8ea40b367d9b327a3f5b335db38",
+         intel: "6d358719fd4390bf25c580986f11c81a04fa8f2047648b5072b9d0c4197516af"
 
   url "https://github.com/DaKiLloTh/homebrew-mead/releases/download/v#{version}/mead-v#{version}-macos-#{arch}.dmg"
   name "mead"
