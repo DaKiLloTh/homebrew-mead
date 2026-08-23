@@ -8,7 +8,7 @@ cask "mead" do
   url "https://github.com/DaKiLloTh/homebrew-mead/releases/download/v#{version}/mead-v#{version}-macos-#{arch}.dmg"
   name "mead"
   desc "Native Homebrew GUI for macOS"
-  homepage "https://github.com/DaKiLloTh/mead"
+  homepage "https://getmead.app"
 
   depends_on macos: :sonoma
 
