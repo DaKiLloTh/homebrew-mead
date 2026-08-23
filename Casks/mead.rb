@@ -37,6 +37,8 @@ cask "mead" do
     <<~EOS
       mead is pre-alpha software: expect bugs, and expect breaking changes
       between releases until it reaches a stable 1.0.
+
+      Release notes: https://github.com/DaKiLloTh/mead/releases/tag/v#{version}
     EOS
   end
 end
