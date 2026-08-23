@@ -1,14 +1,16 @@
 cask "mead" do
-  version "0.6.0"
-  sha256 "1a7ea10b7056ffa84919c02e92a43aa63f241ce3d546e4c274cdf93003576504"
+  arch arm: "arm64", intel: "amd64"
 
-  url "https://github.com/DaKiLloTh/homebrew-mead/releases/download/v#{version}/mead-v#{version}-macos-arm64.dmg"
+  version "0.6.0"
+  sha256 arm:   "1a7ea10b7056ffa84919c02e92a43aa63f241ce3d546e4c274cdf93003576504",
+         intel: "0000000000000000000000000000000000000000000000000000000000000000"
+
+  url "https://github.com/DaKiLloTh/homebrew-mead/releases/download/v#{version}/mead-v#{version}-macos-#{arch}.dmg"
   name "mead"
   desc "Native Homebrew GUI for macOS"
   homepage "https://github.com/DaKiLloTh/mead"
 
-  depends_on arch: :arm64
-  depends_on macos: ">= :sonoma"
+  depends_on macos: :sonoma
 
   app "mead.app"
 
