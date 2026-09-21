@@ -20,12 +20,10 @@ cask "mead" do
   # homebrew-cask repo is being retired (see Homebrew/brew#20755) as part of
   # tightening what that repo accepts, but a third-party tap's own cask
   # definition isn't bound by that policy -- stripping the quarantine
-  # attribute ourselves in postflight, on our own tap, achieves the same
+  # attribute ourselves in postflight_steps, on our own tap, achieves the same
   # practical outcome without depending on a flag Homebrew is removing.
-  postflight do
-    system_command "/usr/bin/xattr",
-                    args: ["-dr", "com.apple.quarantine", "#{appdir}/mead.app"],
-                    sudo: false
+  postflight_steps do
+    run "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "{{appdir}}/mead.app"]
   end
 
   zap trash: [
